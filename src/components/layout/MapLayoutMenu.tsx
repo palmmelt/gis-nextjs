@@ -1,7 +1,7 @@
-import React from "react";
-import MapSideBarMenuList from "../ui/layout/MapSideBarToolsList";
+import React, { RefObject } from "react";
+import MapSideBarMenuList from "../ui/layout_map/MapSideBarToolsList";
 
-function MapLayoutMenu({fullScreenAction,fullScreen}: { fullScreenAction: ()=>void,fullScreen:HTMLDivElement|null}) {
+function MapLayoutMenu({mapFullScreenRef}: {mapFullScreenRef:RefObject<HTMLDivElement>}) {
   return (
     <div className="sm:ml-64 bg-gray-200 relative z-10">
       {/* <button
@@ -27,7 +27,7 @@ function MapLayoutMenu({fullScreenAction,fullScreen}: { fullScreenAction: ()=>vo
         </svg>
       </button> */}
 
-        <MapSideBarMenuList fullScreenAction={fullScreenAction} fullScreen={fullScreen}/>
+        <MapSideBarMenuList mapFullScreenRef={mapFullScreenRef}/>
     </div>
   );
 }

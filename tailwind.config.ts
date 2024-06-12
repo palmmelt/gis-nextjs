@@ -16,6 +16,23 @@ const config: Config = {
       colors:{
         "main-blue":"rgba(27,50,94,255)",
         "main-yellow":"rgba(249,164,26,255)",
+      },
+      keyframes: {
+        openMenuMoveIn: {
+          '0%': { width: '5rem' },
+          '100%': { width: '18rem' },
+        },
+        openMenuMoveOut: {
+          '0%': { width: '18rem' },
+          '100%': { width: '5rem' },
+        }
+      },
+      animation: {
+        openMenuMoveIn: 'openMenuMoveIn 1s ease-in-out',
+        openMenuMoveOut: 'openMenuMoveOut 1s ease-in-out',
+      },
+      transitionProperty: {
+        'width': 'width',
       }
     },
   },
