@@ -6,9 +6,9 @@ import { GoMoveToTop } from "react-icons/go";
 import { AiOutlineFullscreen, AiOutlineFullscreenExit } from "react-icons/ai";
 import { v4 as uuidv4 } from "uuid";
 import GeocodingComponent from "./sub_list_menu_map/GeocodingComponent";
-import useEscapeKey from "@/hooks/actions-keyborad/useEscapeKey";
 import ToolsList from "./sub_list_menu_map/ToolsList";
 import MenuGoMoveToTop from "./sub_list_menu_map/MenuGoMoveToTop";
+import ListMapControls from "./sub_list_menu_map/ListMapControls";
 
 function MapSideBarToolsList({
   mapFullScreenRef,
@@ -34,7 +34,7 @@ function MapSideBarToolsList({
       id="default-sidebar"
       className={`fixed sm:top-0 sm:left-0 z-2 
       ${openMenu ? "w-72 " : "w-20"}
-      h-full -translate-x-full sm:translate-x-0 border-e-2 border-main-blue transition-all durations-auto`}
+      h-full -translate-x-full sm:translate-x-0 border-e-2 border-main-blue transition-all duration-500 durations-auto`}
       aria-label="Sidebar"
     >
       <div className="h-[100%] px-2 py-4 bg-[rgb(255,255,255,0.8)] relative">
@@ -42,7 +42,7 @@ function MapSideBarToolsList({
           <div className="relative">
             {/* TOGGLE MENU */}
             <button onClick={() => setOpenMenu(!openMenu)}>
-              <IoChevronBackOutline className="bg-[white] text-main-blue text-3xl rounded-full border-2 border-main-blue absolute sm:-right-1 top-12 cursor-pointer " />
+              <IoChevronBackOutline className={`bg-[white] text-main-blue text-3xl rounded-full border-2 border-main-blue absolute sm:-right-1 top-12 cursor-pointer ${openMenu ? '':'rotate-180'} `} />
             </button>
 
             {/* Seach Bar*/}
@@ -60,7 +60,7 @@ function MapSideBarToolsList({
             alt="Girl in a jacket"
             style={{ width: "100px", height: "auto" }}
           />
-          <p className={`text-md ${openMenu ? "flex" : "hidden"}`}>
+          <p className={`text-md truncate ${openMenu ? "flex" : "hidden"}`}>
             <b>MAP SERVER</b>
           </p>
         </div>
@@ -77,9 +77,10 @@ function MapSideBarToolsList({
               toggleMenu={openMenu}
             />
 
-            {layerControls}
+            <ListMapControls/>
 
             <MenuGoMoveToTop menubarRef={menubarRef} />
+            
           </div>
         </div>
 

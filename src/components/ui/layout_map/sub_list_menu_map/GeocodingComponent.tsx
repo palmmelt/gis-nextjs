@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { FaSearchLocation } from "react-icons/fa";
+import { SiOpenstreetmap } from "react-icons/si";
+import { OpenStreetMapProvider } from 'leaflet-geosearch';
+
 
 function GeocodingComponent({toggleMenu}:{toggleMenu:boolean}) {
   const [position, setPosition] = useState([51.505, -0.09]);
   const [address, setAddress] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
+  const provider = new OpenStreetMapProvider();
+
   const [isInputFocus,setIsInputFocus] = useState(false);
 
   const handleGeocode = async () => {
@@ -31,7 +37,7 @@ function GeocodingComponent({toggleMenu}:{toggleMenu:boolean}) {
     <div className={`flex flex-row text-main-blue bg-white ps-2 pe-3 py-2 border border-main-blue absolute left-5 top-2 cursor-pointer rounded-3xl `}>
       <div className="flex flex-row justify-center items-center me-1">
         <input
-          className={`rounded-s-3xl p-1 border-b-1 border-gray-400 bg-white transition-width ${isInputFocus ? 'w-[250px]':'w-[180px]' } focus:outline-none focus:border-none`}
+          className={`rounded-s-3xl p-1 border-b-1 border-gray-400 bg-white transition-width ${isInputFocus ? 'w-[250px]':'w-[180px]' } duration-500 focus:outline-none focus:border-none`}
           placeholder="ค้นหาในข้อมูลใน Maps"
           type="text"
           value={address}
@@ -42,9 +48,9 @@ function GeocodingComponent({toggleMenu}:{toggleMenu:boolean}) {
       </div>
       <button
         className="flex flex-row justify-center items-center text-gray-500 rounded-full p-2 hover:bg-gray-100"
-        onClick={handleGeocode}
+        onClick={()=>handleGeocode()}
       >
-        <FaSearchLocation className="w-4 h-4" />
+        <SiOpenstreetmap className="w-4 h-4" />
       </button>
     </div>
   );

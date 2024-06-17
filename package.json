@@ -12,6 +12,8 @@
     "@reduxjs/toolkit": "^2.2.5",
     "axios": "^1.7.2",
     "leaflet": "^1.9.4",
+    "leaflet-geosearch": "^4.0.0",
+    "leaflet-velocity": "^2.1.4",
     "next": "14.2.3",
     "next-redux-wrapper": "^8.1.0",
     "react": "^18",

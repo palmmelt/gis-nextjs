@@ -2,7 +2,7 @@ import React, { RefObject, useEffect, useState } from "react";
 import { AiOutlineFullscreen, AiOutlineFullscreenExit } from "react-icons/ai";
 import { GoMoveToTop } from "react-icons/go";
 import { v4 as uuidv4 } from "uuid";
-import { FaTools } from "react-icons/fa";
+import { VscTools } from "react-icons/vsc";
 
 type Props = {};
 
@@ -60,123 +60,6 @@ function ToolsList({
       ),
       onclick: toggleFullscreen,
     },
-    {
-      name: "Full Screen",
-      icon: fullScreen ? (
-        <AiOutlineFullscreenExit className="w-5 h-5" />
-      ) : (
-        <AiOutlineFullscreen className="w-5 h-5" />
-      ),
-      onclick: toggleFullscreen,
-    },
-    {
-      name: "Full Screen",
-      icon: fullScreen ? (
-        <AiOutlineFullscreenExit className="w-5 h-5" />
-      ) : (
-        <AiOutlineFullscreen className="w-5 h-5" />
-      ),
-      onclick: toggleFullscreen,
-    },
-    {
-      name: "Full Screen",
-      icon: fullScreen ? (
-        <AiOutlineFullscreenExit className="w-5 h-5" />
-      ) : (
-        <AiOutlineFullscreen className="w-5 h-5" />
-      ),
-      onclick: toggleFullscreen,
-    },
-    {
-      name: "Full Screen",
-      icon: fullScreen ? (
-        <AiOutlineFullscreenExit className="w-5 h-5" />
-      ) : (
-        <AiOutlineFullscreen className="w-5 h-5" />
-      ),
-      onclick: toggleFullscreen,
-    },
-    {
-      name: "Full Screen",
-      icon: fullScreen ? (
-        <AiOutlineFullscreenExit className="w-5 h-5" />
-      ) : (
-        <AiOutlineFullscreen className="w-5 h-5" />
-      ),
-      onclick: toggleFullscreen,
-    },
-    {
-      name: "Full Screen",
-      icon: fullScreen ? (
-        <AiOutlineFullscreenExit className="w-5 h-5" />
-      ) : (
-        <AiOutlineFullscreen className="w-5 h-5" />
-      ),
-      onclick: toggleFullscreen,
-    },
-    {
-      name: "Full Screen",
-      icon: fullScreen ? (
-        <AiOutlineFullscreenExit className="w-5 h-5" />
-      ) : (
-        <AiOutlineFullscreen className="w-5 h-5" />
-      ),
-      onclick: toggleFullscreen,
-    },
-    {
-      name: "Full Screen",
-      icon: fullScreen ? (
-        <AiOutlineFullscreenExit className="w-5 h-5" />
-      ) : (
-        <AiOutlineFullscreen className="w-5 h-5" />
-      ),
-      onclick: toggleFullscreen,
-    },
-    {
-      name: "Full Screen",
-      icon: fullScreen ? (
-        <AiOutlineFullscreenExit className="w-5 h-5" />
-      ) : (
-        <AiOutlineFullscreen className="w-5 h-5" />
-      ),
-      onclick: toggleFullscreen,
-    },
-    {
-      name: "Full Screen",
-      icon: fullScreen ? (
-        <AiOutlineFullscreenExit className="w-5 h-5" />
-      ) : (
-        <AiOutlineFullscreen className="w-5 h-5" />
-      ),
-      onclick: toggleFullscreen,
-    },
-    {
-      name: "Full Screen",
-      icon: fullScreen ? (
-        <AiOutlineFullscreenExit className="w-5 h-5" />
-      ) : (
-        <AiOutlineFullscreen className="w-5 h-5" />
-      ),
-      onclick: toggleFullscreen,
-    },
-    {
-      name: "Full Screen",
-      icon: fullScreen ? (
-        <AiOutlineFullscreenExit className="w-5 h-5" />
-      ) : (
-        <AiOutlineFullscreen className="w-5 h-5" />
-      ),
-      onclick: toggleFullscreen,
-    },
-    {
-      name: "Full Screen",
-      icon: fullScreen ? (
-        <AiOutlineFullscreenExit className="w-5 h-5" />
-      ) : (
-        <AiOutlineFullscreen className="w-5 h-5" />
-      ),
-      onclick: toggleFullscreen,
-    },
   ];
 
   useEffect(() => {
@@ -199,9 +82,9 @@ function ToolsList({
         <div
           className='p-1 '
         >
-          <FaTools className="w-5 h-5 text-main-blue"/>
+          <VscTools className="w-5 h-5 text-main-blue"/>
         </div>
-        <span className={`ms-3 ${toggleMenu ? "flex" : "hidden"}`}>
+        <span className={`ms-3 truncate`}>
         TOOLS
         </span>
       </div>
@@ -224,7 +107,7 @@ function ToolsList({
               >
                 {menu.icon}
               </div>
-              <span className={`ms-3 ${toggleMenu ? "flex" : "hidden"}`}>
+              <span className={`ms-3 truncate `}>
                 {menu.name}
               </span>
             </a>
