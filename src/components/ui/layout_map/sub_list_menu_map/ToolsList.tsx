@@ -50,7 +50,7 @@ function ToolsList({
     }
   };
 
-  const menuList = [
+  const toolMenuList = [
     {
       name: "Full Screen",
       icon: fullScreen ? (
@@ -88,7 +88,7 @@ function ToolsList({
         TOOLS
         </span>
       </div>
-      {menuList.map((menu) => {
+      {toolMenuList.map((menu) => {
         return (
           <li className="" key={uuidv4()}>
             <a

@@ -9,25 +9,16 @@ import GeocodingComponent from "./sub_list_menu_map/GeocodingComponent";
 import ToolsList from "./sub_list_menu_map/ToolsList";
 import MenuGoMoveToTop from "./sub_list_menu_map/MenuGoMoveToTop";
 import ListMapControls from "./sub_list_menu_map/ListMapControls";
+import { useMenu } from "@/contexts/MenuContext";
 
 function MapSideBarToolsList({
   mapFullScreenRef,
 }: {
-  mapFullScreenRef: RefObject<HTMLDivElement>;
+  mapFullScreenRef: RefObject<HTMLDivElement>
 }) {
   const menubarRef = useRef<HTMLDivElement>(null);
   const [openMenu, setOpenMenu] = useState(true);
 
-  const layerControls = (
-    <ul className="space-y-2 font-medium max-h-[80vh] ">
-      <div
-        className={`flex items-center p-2 mx-2 my-2 text-gray-900 bg:[rgb(0,0,0,0)] `}
-      >
-        <div className="p-1 ">+</div>
-        <span className={`ms-3 ${openMenu ? "flex" : "hidden"}`}>TOOLS</span>
-      </div>
-    </ul>
-  );
 
   return (
     <aside
@@ -72,12 +63,13 @@ function MapSideBarToolsList({
         >
           {/* Component menu */}
           <div className="max-w-[95%] truncate">
+            
+          <ListMapControls />
+
             <ToolsList
               mapFullScreenRef={mapFullScreenRef}
               toggleMenu={openMenu}
             />
-
-            <ListMapControls/>
 
             <MenuGoMoveToTop menubarRef={menubarRef} />
             
